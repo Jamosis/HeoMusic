@@ -13,6 +13,14 @@
   <link rel="bookmark" href="./img/icon.webp">
   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./img/icon-r.webp">
   <meta name="description" content="贤宝的八音盒">
+    <style>
+      html .sakana-box{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+       transform-origin: 100% 100%; /* 从右下开始变换 */
+      }
+    </style>
 </head>
 <body>
 <div id="music_bg"></div>
@@ -25,5 +33,17 @@
 <script src="./js/APlayer.min.js"></script>
 <script src="./js/Meting2.min.js"></script>
 <script async data-pjax src="./js/main.js"></script>
+<div class="sakana-box"></div>
+<script src="https://cdn.jsdelivr.net/gh/linjiangyu2/halo/js/sakana.js"></script>
+<script>
+// 取消静音
+Sakana.setMute(false);
+// 启动
+Sakana.init({
+el:         '.sakana-box',     // 启动元素 node 或 选择器
+scale:      .5,                // 缩放倍数
+canSwitchCharacter: true,      // 允许换角色
+});
+</script>
 </body>
 </html>
